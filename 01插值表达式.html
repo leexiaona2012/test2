@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>01插值表达式</title>
+<script src="js/2.6.14vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<!-- vue中的插值表达式的注意点
+      {{}}中使用的数据必须在data中存在
+      {{}}虽然能够使用表达式，不能出现js的语句，不能在{{}}中写if for 
+      {{}} 
+	 -->
+	<h1>{{msg}}</h1>
+	<p>大家好---{{msg}}</p>
+	<p>{{car.brand}}</p>
+	<p>{{car.brand.toUpperCase()}} -----{{car.price + 100}}</p>
+	<p>{{age>18?'成年':'未成年'}}</p>
+</div>
+<script>
+const vm = new Vue({
+  el: '#app',
+  data: {
+    msg: '黑马程序员',
+    car: { 
+    	brand:'forever',
+    	price: 400
+    },
+    age:18
+  }
+})
+</script>
+</body>
+</html>
